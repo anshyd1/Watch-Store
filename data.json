@@ -1,0 +1,69 @@
+{
+  "watches": [
+    {
+      "id": 1,
+      "name": "Sunrise Edition",
+      "price": "₹4,999",
+      "desc": "White dial with orange accents. Inspired by the first light of dawn.",
+      "images": [
+        "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&q=80",
+        "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80",
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&q=80",
+        "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=800&q=80",
+        "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Midnight Steel",
+      "price": "₹6,499",
+      "desc": "Dark steel case, minimal markers. For the ones who own the night.",
+      "images": [
+        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
+        "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&q=80",
+        "https://images.unsplash.com/photo-1533139502658-0198f920d8e7?w=800&q=80",
+        "https://images.unsplash.com/photo-1548940740-204726a19be3?w=800&q=80",
+        "https://images.unsplash.com/photo-1495857000853-fe46c8aefc31?w=800&q=80"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Caption Classic",
+      "price": "₹3,999",
+      "desc": "Our signature piece. Clean lines, bold statement. Timeless.",
+      "images": [
+        "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80",
+        "https://images.unsplash.com/photo-1617625802912-cde586faf749?w=800&q=80",
+        "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=800&q=80",
+        "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?w=800&q=80",
+        "https://images.unsplash.com/photo-1563460716-4bfe38055328?w=800&q=80"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Golden Hour",
+      "price": "₹5,499",
+      "desc": "Rose gold with Italian leather strap. Pure elegance.",
+      "images": [
+        "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=800&q=80",
+        "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&q=80",
+        "https://images.unsplash.com/photo-1516574187841-352f55ff7ad0?w=800&q=80",
+        "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=800&q=80",
+        "https://images.unsplash.com/photo-1560343776-97e7d202ff0e?w=800&q=80"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ocean Breeze",
+      "price": "₹7,999",
+      "desc": "Blue dial, titanium case. Made for adventurers.",
+      "images": [
+        "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800&q=80",
+        "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800&q=80",
+        "https://images.unsplash.com/photo-1598520106830-8c45c2035460?w=800&q=80",
+        "https://images.unsplash.com/photo-1615367782373-b8e6d847c4bb?w=800&q=80",
+        "https://images.unsplash.com/photo-1622434641406-a405b4adefd7?w=800&q=80"
+      ]
+    }
+  ]
+}

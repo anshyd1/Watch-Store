@@ -54,15 +54,15 @@
     },
     {
       "id": 5,
-      "name": "Ocean Breeze",
-      "price": "₹7,999",
-      "desc": "Blue dial, titanium case. Made for adventurers.",
+      "name": "Rishok Blue Dial",
+      "price": "₹699",
+      "desc": "Stylish blue dial with a sleek metal finish. Perfect everyday watch for a modern look at an unbeatable price.",
       "images": [
-        "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800&q=80",
-        "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=800&q=80",
-        "https://images.unsplash.com/photo-1598520106830-8c45c2035460?w=800&q=80",
-        "https://images.unsplash.com/photo-1615367782373-b8e6d847c4bb?w=800&q=80",
-        "https://images.unsplash.com/photo-1622434641406-a405b4adefd7?w=800&q=80"
+        "https://i.ibb.co/FbBvjMBQ/your-image.jpg",
+        "https://i.ibb.co/200Kvtmh/your-image.jpg",
+        "https://i.ibb.co/0yLRZpx6/your-image.jpg",
+        "https://i.ibb.co/hFTsJjbG/your-image.jpg",
+        "https://i.ibb.co/mCTMPM9m/your-image.jpg"
       ]
     }
   ]

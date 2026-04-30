@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Black Classic",
       "price": "₹999",
+      "mrp": "₹1999",
       "desc": "Premium matte black dial. Minimalist design, maximum style. Perfect for daily wear.",
       "images": [
         "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
@@ -16,7 +17,8 @@
     {
       "id": 2,
       "name": "Sunrise White",
-      "price": "₹799",
+      "price": "₹999",
+      "mrp": "₹1999",
       "desc": "Clean white dial with subtle orange accents. Light, stylish, affordable.",
       "images": [
         "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&q=80",
@@ -29,7 +31,8 @@
     {
       "id": 3,
       "name": "Caption Classic",
-      "price": "₹1,199",
+      "price": "₹999",
+      "mrp": "₹1999",
       "desc": "Our signature piece. Bold dial, slim profile. The watch that started it all.",
       "images": [
         "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80",
@@ -42,7 +45,8 @@
     {
       "id": 4,
       "name": "Golden Hour",
-      "price": "₹1,299",
+      "price": "₹999",
+      "mrp": "₹1999",
       "desc": "Rose gold case with premium leather strap. For those who dress to impress.",
       "images": [
         "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=800&q=80",
@@ -55,7 +59,8 @@
     {
       "id": 5,
       "name": "Steel Blue",
-      "price": "₹1,099",
+      "price": "₹999",
+      "mrp": "₹1999",
       "desc": "Deep blue dial, stainless steel case. Premium feel at an unbeatable price.",
       "images": [
         "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800&q=80",

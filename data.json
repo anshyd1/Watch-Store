@@ -2,68 +2,68 @@
   "watches": [
     {
       "id": 1,
-      "name": "Sunrise Edition",
-      "price": "₹4,999",
-      "desc": "White dial with orange accents. Inspired by the first light of dawn.",
+      "name": "Premium Black",
+      "price": "₹999",
+      "mrp": "₹1999",
+      "badge": "50% OFF",
+      "stock": "Only 3 left",
+      "desc": "Sleek black dial with premium finish.",
       "images": [
-        "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&q=80",
-        "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80",
-        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&q=80",
-        "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=800&q=80",
-        "https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&q=80"
-      ]
+        "https://i.ibb.co/ZRZDVWYk/IMG-20260429-WA0068.jpg"
+      ],
+      "order_link": "https://wa.me/919918996096?text=I%20want%20to%20order%20Premium%20Black%20Watch%20for%20₹999"
     },
     {
       "id": 2,
-      "name": "Midnight Steel",
-      "price": "₹6,499",
-      "desc": "Dark steel case, minimal markers. For the ones who own the night.",
+      "name": "Luxury Silver",
+      "price": "₹999",
+      "mrp": "₹1999",
+      "badge": "50% OFF",
+      "stock": "Only 5 left",
+      "desc": "Elegant silver design for everyday wear.",
       "images": [
-        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
-        "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&q=80",
-        "https://images.unsplash.com/photo-1533139502658-0198f920d8e7?w=800&q=80",
-        "https://images.unsplash.com/photo-1548940740-204726a19be3?w=800&q=80",
-        "https://images.unsplash.com/photo-1495857000853-fe46c8aefc31?w=800&q=80"
-      ]
+        "https://i.ibb.co/Hftd8THd/IMG-20260429-WA0070.jpg"
+      ],
+      "order_link": "https://wa.me/919918996096?text=I%20want%20to%20order%20Luxury%20Silver%20Watch%20for%20₹999"
     },
     {
       "id": 3,
-      "name": "Caption Classic",
-      "price": "₹3,999",
-      "desc": "Our signature piece. Clean lines, bold statement. Timeless.",
+      "name": "Classic Blue",
+      "price": "₹999",
+      "mrp": "₹1999",
+      "badge": "50% OFF",
+      "stock": "Only 4 left",
+      "desc": "Stylish blue dial with modern look.",
       "images": [
-        "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80",
-        "https://images.unsplash.com/photo-1617625802912-cde586faf749?w=800&q=80",
-        "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=800&q=80",
-        "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?w=800&q=80",
-        "https://images.unsplash.com/photo-1563460716-4bfe38055328?w=800&q=80"
-      ]
+        "https://i.ibb.co/BVKPF5Dc/image-771ae6e7.png"
+      ],
+      "order_link": "https://wa.me/919918996096?text=I%20want%20to%20order%20Classic%20Blue%20Watch%20for%20₹999"
     },
     {
       "id": 4,
-      "name": "Golden Hour",
-      "price": "₹5,499",
-      "desc": "Rose gold with Italian leather strap. Pure elegance.",
+      "name": "Stylish Gold",
+      "price": "₹999",
+      "mrp": "₹1999",
+      "badge": "50% OFF",
+      "stock": "Only 2 left",
+      "desc": "Golden finish with bold premium feel.",
       "images": [
-        "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=800&q=80",
-        "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&q=80",
-        "https://images.unsplash.com/photo-1516574187841-352f55ff7ad0?w=800&q=80",
-        "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=800&q=80",
-        "https://images.unsplash.com/photo-1560343776-97e7d202ff0e?w=800&q=80"
-      ]
+        "https://i.ibb.co/Rk5gSyrW/IMG-20260429-WA0059.jpg"
+      ],
+      "order_link": "https://wa.me/919918996096?text=I%20want%20to%20order%20Stylish%20Gold%20Watch%20for%20₹999"
     },
     {
       "id": 5,
-      "name": "Rishok Blue Dial",
-      "price": "₹699",
-      "desc": "Stylish blue dial with a sleek metal finish. Perfect everyday watch for a modern look at an unbeatable price.",
+      "name": "Elegant White",
+      "price": "₹999",
+      "mrp": "₹1999",
+      "badge": "50% OFF",
+      "stock": "Only 6 left",
+      "desc": "Clean white dial with classy design.",
       "images": [
-        "https://i.ibb.co/pv3D983H/1777439574330-019dd7a7-0e04-7395-b2d7-b253612d52fc.png",
-        "https://i.ibb.co/cKKT6FM3/1777439686406-019dd7a8-6c03-74ff-9435-a60ee839a588.png",
-        "https://i.ibb.co/s94dQpZN/1777439808534-019dd7aa-5c10-7274-a76b-7a7cd038bb76.png",
-        "https://i.ibb.co/F4d6LM2Q/1777440034974-019dd7ae-0456-7b34-b4c4-23470696b431.png",
-        "https://i.ibb.co/8DsSQSrJ/1777440178527-019dd7b0-0ca2-7eaf-aec2-24e7741e0b28.png"
-      ]
+        "https://i.ibb.co/vvVvv791/IMG-20260429-WA0069.jpg"
+      ],
+      "order_link": "https://wa.me/919918996096?text=I%20want%20to%20order%20Elegant%20White%20Watch%20for%20₹999"
     }
   ]
 }

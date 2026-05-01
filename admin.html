@@ -2,146 +2,337 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Watch Admin Panel</title>
+  <title>Watch Store Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
-    body { 
-      font-family: 'Segoe UI', sans-serif; 
-      max-width: 600px; 
-      margin: 20px auto; 
-      padding: 20px; 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      color: #2d3748;
+    }
+
+    /* Login Screen */
+    #loginScreen {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+    }
+    .login-card {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
       text-align: center;
-      background: #f8f9fa;
     }
-    input, button { 
-      padding: 12px; 
-      margin: 10px 0; 
-      width: 100%; 
+    .login-card h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #2d3748;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 14px;
       border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
     }
-    button {
+    .btn {
       background: #4a5568;
       color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 16px;
       cursor: pointer;
+      transition: 0.3s;
     }
-    button:hover {
+    .btn:hover {
       background: #2d3748;
     }
-    .gallery { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 10px; 
-      margin-top: 20px; 
-      justify-content: center;
+
+    /* Dashboard */
+    #dashboard {
+      display: none;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .photo-item {
-      text-align: center;
-      width: 120px;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
     }
-    .photo-item img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
+    header h1 {
+      font-size: 28px;
+      color: #2d3748;
+    }
+    .logout-btn {
+      background: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
       border-radius: 6px;
-      border: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    /* Upload Form */
+    .upload-form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+    .form-row input, .form-row select {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .tag {
+      background: #ff6b6b;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .card-body h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    .card-body p {
+      color: #718096;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
     .delete-btn {
-      background: red !important;
-      font-size: 12px !important;
-      padding: 5px !important;
-      margin-top: 5px !important;
+      background: #e53e3e;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
     }
-    h1 { color: #2d3748; }
-    h3 { color: #4a5568; margin-top: 25px; }
   </style>
 </head>
 <body>
 
-  <!-- 🔐 Password Check -->
+  <!-- 🔐 Login Screen -->
+  <div id="loginScreen">
+    <div class="login-card">
+      <h1>🔐 Admin Login</h1>
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Username" />
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password" />
+      </div>
+      <button class="btn" onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <!-- 🖼️ Dashboard -->
+  <div id="dashboard" style="display: none;">
+    <header>
+      <h1>⌚ Watch Store Admin</h1>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <!-- Upload Form -->
+    <div class="upload-form">
+      <h2>📤 Add New Watch</h2>
+      <div class="form-row">
+        <input type="file" id="fileInput" accept="image/*" required />
+        <input type="text" id="title" placeholder="Watch Title" />
+        <input type="text" id="desc" placeholder="Description" />
+        <select id="discount">
+          <option value="">No Discount</option>
+          <option value="10%">10% Off</option>
+          <option value="20%">20% Off</option>
+          <option value="30%">30% Off</option>
+          <option value="40%">40% Off</option>
+          <option value="50%">50% Off</option>
+        </select>
+      </div>
+      <button class="btn" onclick="upload()">Upload Watch</button>
+    </div>
+
+    <!-- Gallery -->
+    <h2>All Watches</h2>
+    <div class="gallery" id="gallery"></div>
+  </div>
+
   <script>
-    const correctPassword = "watchadmin"; // ← Yahan apna password daalein (change karein)
-    const entered = prompt("Admin Password?");
-    if (entered !== correctPassword) {
-      document.body.innerHTML = "<h2 style='color:red'>❌ Access Denied</h2>";
-      throw new Error("Access denied");
-    }
-  </script>
-
-  <h1>📷 Watch Store Admin</h1>
-  <p><small>Upload & Delete Photos</small></p>
-
-  <input type="file" id="fileInput" accept="image/*" />
-  <button onclick="upload()">📤 Upload Photo</button>
-
-  <h3>All Photos</h3>
-  <div id="gallery" class="gallery"></div>
-
-  <!-- Supabase SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-    // ✅ Your Supabase Details
+    // Supabase Config
     const supabaseUrl = 'https://eslcxatvwszqvzxnfuij.supabase.co';
     const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVzbGN4YXR2d3N6cXZ6eG5mdWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2MTgzMjQsImV4cCI6MjA5MzE5NDMyNH0.qzsMQt8zJF2nseV8v7KMNRCRqH2iI-T_Scl9Beh0AA8';
-
     const supabase = supabase.createClient(supabaseUrl, supabaseAnonKey);
 
+    // Default Credentials
+    const correctUsername = "admin";
+    const correctPassword = "shivayd1"; // ← Yeh aapka password hai
+
+    // Login Function
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      if (user === correctUsername && pass === correctPassword) {
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        loadPhotos();
+      } else {
+        alert("❌ Invalid credentials!");
+      }
+    }
+
+    // Logout
+    function logout() {
+      if (confirm("Are you sure you want to logout?")) {
+        document.getElementById('dashboard').style.display = 'none';
+        document.getElementById('loginScreen').style.display = 'flex';
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+      }
+    }
+
+    // Upload with Metadata
     async function upload() {
       const fileInput = document.getElementById('fileInput');
+      const title = document.getElementById('title').value || "Luxury Watch";
+      const desc = document.getElementById('desc').value || "Premium collection";
+      const discount = document.getElementById('discount').value;
+
       const file = fileInput.files[0];
       if (!file) return alert("⚠️ Please select a photo");
 
       const fileName = 'watch_' + Date.now() + '.' + file.name.split('.').pop();
 
+      // Upload image
       const { data, error } = await supabase.storage
         .from('photos')
         .upload(fileName, file);
 
       if (error) {
         console.error("Upload Error:", error);
-        alert("❌ Error: " + error.message);
+        alert("❌ Upload failed: " + error.message);
       } else {
         alert("✅ Uploaded successfully!");
         loadPhotos();
-        fileInput.value = ''; // Clear input
+        // Reset form
+        fileInput.value = '';
+        document.getElementById('title').value = '';
+        document.getElementById('desc').value = '';
+        document.getElementById('discount').value = '';
       }
     }
 
+    // Save metadata in localStorage (simple way)
+    function saveMetadata(name, data) {
+      let meta = JSON.parse(localStorage.getItem('watchMeta') || '{}');
+      meta[name] = data;
+      localStorage.setItem('watchMeta', JSON.stringify(meta));
+    }
+
+    function getMetadata() {
+      return JSON.parse(localStorage.getItem('watchMeta') || '{}');
+    }
+
+    // Load Photos + Metadata
     async function loadPhotos() {
       const { data, error } = await supabase.storage
         .from('photos')
-        .list('', { limit: 100, offset: 0 });
+        .list('', { limit: 100 });
 
       if (error) {
         console.error("Load Error:", error);
-        document.getElementById('gallery').innerHTML = "<p>❌ Can't load photos</p>";
         return;
       }
 
       const gallery = document.getElementById('gallery');
       gallery.innerHTML = '';
 
-      if (data.length === 0) {
-        gallery.innerHTML = "<p>No photos yet</p>";
-        return;
-      }
+      const metadata = getMetadata();
 
       data.forEach(file => {
         const filePath = `https://eslcxatvwszqvzxnfuij.supabase.co/storage/v1/object/public/photos/${file.name}`;
         
+        // Get or set default metadata
+        let meta = metadata[file.name] || {
+          title: "Luxury Watch",
+          desc: "Premium collection",
+          discount: ""
+        };
+
         const div = document.createElement('div');
-        div.className = 'photo-item';
+        div.className = 'card';
         div.innerHTML = `
-          <img src="${filePath}" alt="watch" onerror="this.src='https://via.placeholder.com/120?text=Error';"/>
-          <button class="delete-btn" onclick="del('${file.name}')">🗑️ Delete</button>
+          <img src="${filePath}" alt="watch" onerror="this.src='https://via.placeholder.com/250x180?text=Error';"/>
+          <div class="card-body">
+            ${meta.discount ? `<div class="tag">${meta.discount} OFF</div>` : ''}
+            <h3>${meta.title}</h3>
+            <p>${meta.desc}</p>
+            <button class="delete-btn" onclick="del('${file.name}')">🗑️ Delete</button>
+          </div>
         `;
         gallery.appendChild(div);
       });
     }
 
+    // Delete
     async function del(filename) {
-      if (!confirm(`Delete "${filename}"? This cannot be undone.`)) return;
+      if (!confirm(`Delete "${filename}" permanently?`)) return;
 
       const { error } = await supabase.storage
         .from('photos')
@@ -150,13 +341,20 @@
       if (error) {
         alert("❌ Delete failed: " + error.message);
       } else {
+        let meta = JSON.parse(localStorage.getItem('watchMeta') || '{}');
+        delete meta[filename];
+        localStorage.setItem('watchMeta', JSON.stringify(meta));
         alert("✅ Deleted!");
         loadPhotos();
       }
     }
 
-    // Load photos when page opens
-    window.onload = loadPhotos;
+    // Auto-load after login
+    window.onload = () => {
+      if (document.getElementById('dashboard').style.display === 'block') {
+        loadPhotos();
+      }
+    };
   </script>
 </body>
 </html>
